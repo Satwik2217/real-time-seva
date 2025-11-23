@@ -30,6 +30,10 @@ const io = socket(server, {
   },
 });
 
+const jobController = require("./controllers/jobController");
+
+jobController.setIoInstance(io);
+
 const Vendor = require("./Models/Vendor");
 
 io.on("connection", (socket) => {
